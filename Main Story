@@ -1,0 +1,187 @@
+import sys
+import time
+
+
+def slowprint(s):
+    for c in s + '\n':
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(2. / 9)
+
+
+print("Welcome to the land of persia \n")
+play_game = input("Do you wanna play? (Yes , No): ").lower()
+
+
+def game_title():
+    print('                                               ***************************')
+    print('                                               ***************************')
+    print('                                               **                       **')
+    print('                                               **                       **')
+    print('                                               **       ESCAPING        **')
+    print('                                               **    FROM THE ABYSS     **')
+    print('                                               **                       **')
+    print('                                               **      A GAME BY:       **')
+    print('                                               **                       **')
+    print('                                               **       ARMINIUS        **')
+    print('                                               **                       **')
+    print('                                               **                       **')
+    print('                                               **                       **')
+    print('                                               ***************************')
+    print('                                               ***************************')
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+
+
+def intro():
+    print(f"- {hero_name}: ............ Where...where am i.....!?\n"
+          f" you can see nothing..,  hear nothing.....\n"
+          f"- {hero_name}: What is this place..?\n"
+          f" A strange weak voice suddenly starts to whisper.....\n"
+          f"- {hero_name}: Who are you? what is this place? what have you done to me?\n"
+          f"- Strange voice: This...this is the abyss.... \n"
+          f" we are trapped here, all of us, you and i seem to be the only "
+          f" two who can communicate with one another.\n"
+          f"- Strange voice: My name is Cyrus;"
+          f" King of anshan, King of persia, king of kings, king of babylon, breaker of chains,"
+          f" the liberator of jews...\n"
+          f"- {hero_name}: Then... who am i ?\n"
+          f"- Cyrus: I have been awakened for a long time now, i cant seem to remember how long; but i remember"
+          f" really wanting to remember, and that by wanting it "
+          f"so bad i focused almost all my energy to remember who i was"
+          f" and what happened to me.\n"
+          f"- {hero_name}: You were a prince of Persia,the son of a mighty king, KING NADER,"
+          f" you were supposed to become the king of persia,"
+          f" you were destined for greatness, to rid our land of liars and traitors, to bring "
+          f" peace, stability and prosperity to our lands once more.\n"
+          f" but you were killed unjustly by the forces of Ahriman;"
+          f" and in this time of need, your people need you the most"
+          f";they have been so oppressed, so desperate; that they started to pray to Persias old god, 'MITHRA'"
+          f"so she showed her kindness to people one last time and gave you a chance to help them.\n"
+          f"I have ben here so long that i cannot leave this place to aid my people,"
+          f" this is my torment; but you...\n"
+          f"- {hero_name}: But me what?\n"
+          f"- Cyrus: you can leave this place, even though you have been here a long time it hasn't been long enough"
+          f" for this place to trap you here forever, you must leave this place before it's too late.\n"
+          f"-  ...................\n"
+          f"- {hero_name}: But i don't have the slightest idea how!!!\n"
+          f"- Cyrus: i have been awake here too long, we, "
+          f" the dead are not suppose to be aware of who we were in life,"
+          f" i will use the last of my energy to let you out of this dark prison;"
+          f" but after that, you need to find your own way.\n"
+          f" Try to remember who you were suppose to be and know that"
+          f" you HAVE the power to liberate yourself from this abbeys.\n"
+          f" A BRIGHT LIGHT SUDDENLY COME FROM WHERE THE VOICE WAS COMING FROM, IN THAT ABSOLUTE DARKNESS;\n"
+          f" THAT LIGHT FELT LIKE A BEAM OF HOPE.\n"
+          f" AND THEN............\n\n\n\n\n\n\n"
+          f" YOU  CAN SEE A HOLE IN THE DARK LAYER THAT IS SURROUNDING YOU."
+          f" Cyrus says with a very weak voice: Hurry, i cannot keep this open for long.\n"
+          f" YOU MOVE INTO THE HOLE AND JUST AFTER YOU LEAVE THE DARKNESS,"
+          f" THE HOLE CLOSES BEFORE YOU AND EVERYTHING GOES SILENT....."
+          f" YOU SEE YOURSELF IN WHAT APPEARS TO BE A HUGE ROOM IN AN EVEN LARGER PALACE, "
+          f" WITH NO DELAY YOU START GOING TOWARDS YOUR DESTINY........")
+
+
+if play_game == "yes":
+    hero_name = input("Pls enter your name: ")
+    game_title()
+    intro()
+
+elif play_game == "no":
+    print("Maybe next time")
+
+print(f"- As you start looking around you can feel the strange energy in the room, and it gives you the chills;"
+      f" or maybe you just need a beer.\n"
+      f"===To your left, you see a wooden big box near a huge bed made of gold and silver\n"
+      f"=== to your right; you can see a big desk with some letters on it\n"
+      f"=== beside the bed there is odd looking device in a shape of a cube that seem to be very good for"
+      f" something, but you don't know what...yet!")
+
+
+def choice_convertor(choice_1):
+    choices_dict = {
+        '1': 'check the big box',
+        '2': 'check the desk',
+        '3': 'take a closer look at the device'
+    }
+    output = ""
+    for i in choice_1:
+        output += choices_dict.get(i, i)
+        return output
+
+
+
+choice_1_count = 0
+choices = []
+while choice_1_count <= 3:
+    if choice_1_count < 3:
+        choice_1 = input("what is your choice? \n1. check the big box\n"
+                         "2. check the desk\n"
+                         "3. pick the device up\n"
+                         '(1, 2, 3) ')
+
+        output = choice_convertor(choice_1)
+        if output == '1' and len(choices) < 3:
+            print(f"- you try to open the box but it won't open\n after a few minutes of struggle a moaning female "
+                  f"voice "
+                  f"starts coming out of the box: To open me first you must "
+                  f"prove thy worth.....\nBOX : riddle me this:  You cannot keep me until you have given me. What am I?")
+            answer = input("What is your answer? ").lower
+            if answer == "your word":
+                print("BOX : correct, you have proven yourself worthy")
+                slowprint("- As you open the box you can see a short sword in it with two strange bottles which seems "
+                          "to "
+                          "some kind of fluid in it.")
+                print("you have acquired a unknown potion")
+                choice_1_count += 1
+                choices.append(choice_1)
+                choice_1_count += 1
+                print(choice_1_count)
+                pass
+            else:
+                print("You are not worthy.\nBe gone.....")
+                choices.append(choice_1)
+                choice_1_count += 1
+                print(choice_1_count)
+                pass
+        elif output == '2' and len(choices) < 3:
+            choice_1 = input("what is your choice? \n1. check the big box\n"
+                             "2. check the desk\n"
+                             "3. pick the device up\n"
+                             '(1, 2, 3) ')
+            print(
+                f"Approaching the desk, you see a bunch of papers spread out on the table; as if someone threw them "
+                f"there, as you look closer "
+                f"you notice a particular big piece of paper on the desk folded at least a dozen times, but it's still "
+                f"bigger than the other ones; "
+                f"as you unfold the paper you can see that it is a map of some kind of facility and you seem to be in "
+                f"it, "
+                f"is this how heavens work....?")
+            choice_1_count += 1
+            choices.append(choice_1)
+        elif choice_1 == '3' and len(choices) < 3:
+            choice_1 = input("what is your choice? \n1. check the big box\n"
+                             "2. check the desk\n"
+                             "3. pick the device up\n"
+                             '(1, 2, 3) ')
+            print(f" As you pick the device up you notice how it is even stranger that you think, you don't even know "
+                  f"what is suppose to be strange; it glows with a purple light "
+                  f"that you can't keep your eyes off, it's so pretty; even tho you don't know what is it good for you "
+                  f"pick it up")
+            print("You have acquired an unknown device")
+            choice_1_count -= 1
+            choices.append(choice_1)
+    elif choice_1_count >= 3:
+        print("Suddenly the door opens and a child with a golden cup in his hand looks at you strangely for a few "
+              "seconds... then without saying anything he just runs away and before you know it; he vanishes")
+
